@@ -149,7 +149,7 @@ void main() {
 	LDI lista;
 	lista.prim = lista.ultim = NULL;
 	lista = inserareFinal(lista, crearestudent(45, "Anca", 1.86));
-	lista = inserareFinal(lista, crearestudent(76, "Matei", 1.9 6));
+	lista = inserareFinal(lista, crearestudent(76, "Matei", 1.96));
 	lista = inserareFinal(lista, crearestudent(25, "Stefan", 1.86));
 	lista = inserareFinal(lista, crearestudent(19, "Anca", 1.56));
 	afisareinceputfinal(lista);
