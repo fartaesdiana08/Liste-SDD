@@ -54,6 +54,7 @@ nod* inserarefinal(nod* cap, Student s) {
 			p = p->next;
 		}
 		p->next = nou;
+		return cap;
 
 	}
 	else {
