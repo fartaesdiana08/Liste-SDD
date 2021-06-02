@@ -71,6 +71,26 @@ void afisareLista(nod* cap) {
 	}
 }
 
+//DEZALOCĂRI
+nod* stergereLista(nod* cap) {
+	while (cap) {
+		nod*aux = cap;
+		cap = cap->next;
+		free(aux->info.nume);
+		free(aux);
+	}
+	return cap;
+}
+
+void stergereListaRecursiv(nod* *cap) {
+	if (*cap) {
+		stergereListaRecursiv(&(*cap)->next);
+		free((*cap)->info.nume);
+		free(*cap);
+		*cap = NULL;
+	}
+}
+
 void main() {
 	Ferma f1;
 	f1 = creareFerma("Curcanul vesel", 34);
