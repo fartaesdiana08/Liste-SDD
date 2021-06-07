@@ -73,7 +73,30 @@ void afisarelista(nod* cap) {
 	}
 }
 
-
+Student extragerels(nod** cap, int id) {
+	if (*cap) {
+		if ((*cap)->info.id == id) {
+			Student rez = (*cap)->info;
+			nod* temporar = *cap;
+			*cap = (*cap)->next;
+			free(temporar);
+			return rez;
+		}
+		nod* copie1 = *cap;
+		nod* copie2 = (*cap)->next;
+		while (copie2 && copie2->info.id != id) {
+			copie1 = copie2;
+			copie2 = copie2->next;
+		}
+		if (copie2) {
+			Student rez = copie2->info;
+			copie1->next = copie2->next;
+			free(copie2);
+			return rez;
+		}
+	}
+	else return crearestudent(-1, "", 0);
+}
 
 struct nodd {
 	Student info;
